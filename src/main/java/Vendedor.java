@@ -47,18 +47,17 @@ public class Vendedor extends Persona {
     public void setHistorialVentas(List<Ventas> historialVentas) {
         this.historialVentas = historialVentas;
     }
-
-    public void agregarVenta(Ventas venta) {
-        this.historialVentas.add(venta);
-    }
-
     @Override
     public String toString() {
         return "Vendedor{" +
                 "codigoEmpleado=" + codigoEmpleado +
                 ", fechaContratacion=" + fechaContratacion +
                 ", salario=" + salario +
-                ", historialVentas=" + historialVentas +
-                '}';
+                ", historialVentas=" + historialVentas;
     }
+    public void agregarVenta(Ventas venta) {
+        this.historialVentas.add(venta);
+    }
+
+
 }

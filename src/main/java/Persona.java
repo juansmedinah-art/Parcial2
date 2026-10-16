@@ -49,7 +49,6 @@ public abstract class Persona {
                 "documento='" + documento + '\'' +
                 ", nombreCompleto='" + nombreCompleto + '\'' +
                 ", correo='" + correo + '\'' +
-                ", telefono=" + telefono +
-                '}';
+                ", telefono=" + telefono;
     }
 }

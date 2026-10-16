@@ -57,6 +57,16 @@ public class Ventas {
         this.listaDetalleVentas = listaDetalleVentas;
     }
 
+    @Override
+    public String toString() {
+        return "Ventas{" +
+                "codigo=" + codigo +
+                ", fechaCompra=" + fechaCompra +
+                ", cliente=" + cliente +
+                ", vendedor=" + vendedor +
+                ", listaDetalleVentas=" + listaDetalleVentas;
+    }
+
     public void agregarDetalleVenta(DetalleVentas detalle) {
         this.listaDetalleVentas.add(detalle);
     }

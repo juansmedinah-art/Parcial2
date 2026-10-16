@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cliente extends Persona {
     private int codigoAfiliacion;
     private CategoriaCliente categoriaCliente;
@@ -40,10 +37,6 @@ public class Cliente extends Persona {
         this.historialCompras = historialCompras;
     }
 
-    public void agregarCompra(Ventas venta) {
-        this.historialCompras.add(venta);
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +
@@ -51,5 +44,8 @@ public class Cliente extends Persona {
                 ", categoriaCliente=" + categoriaCliente +
                 ", historialCompras=" + historialCompras +
                 '}';
+    }
+    public void agregarCompra(Ventas venta) {
+        this.historialCompras.add(venta);
     }
 }

@@ -4,13 +4,6 @@ public class DetalleVentas {
     private double subtotal;
     private Inventario inventario;
 
-    public DetalleVentas(int cantidad, Inventario inventario, Cliente cliente) {
-        this.cantidad = cantidad;
-        this.inventario = inventario;
-        this.precioFinal = calcularPrecioFinal(cliente);
-        this.subtotal = calcularSubtotal();
-    }
-
     public DetalleVentas(int cantidad, double precioFinal, double subtotal, Inventario inventario) {
         this.cantidad = cantidad;
         this.precioFinal = precioFinal;
@@ -18,7 +11,6 @@ public class DetalleVentas {
         this.inventario = inventario;
     }
 
-    // Calcula precio final: (precio base + recargo prenda) - descuento cliente
     public double calcularPrecioFinal(Cliente cliente) {
         double precioConRecargo = inventario.getPrenda().calcularPrecioConRecargo();
         double descuentoCliente = cliente.getCategoriaCliente().getDescuento();

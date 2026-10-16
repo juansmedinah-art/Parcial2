@@ -69,6 +69,17 @@ public class Inventario {
         this.historialVentasInventario = historialVentasInventario;
     }
 
+    @Override
+    public String toString() {
+        return "Inventario: " +
+                "codigo=" + codigo +
+                ", talla='" + talla + '\'' +
+                ", color='" + color + '\'' +
+                ", cantidadD=" + cantidadD +
+                ", prenda=" + prenda +
+                ", historialVentasInventario=" + historialVentasInventario;
+    }
+
     public void agregarDetalleHistorial(DetalleVentas detalle) {
         this.historialVentasInventario.add(detalle);
     }

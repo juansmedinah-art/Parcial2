@@ -110,7 +110,7 @@ public class Empresa {
     }
 
     public boolean registrarVendedor(int codigoSucursal, Vendedor vendedor) {
-        // Verificar si la persona (vendedor) ya existe en alguna sucursal
+
         for (Sucursal s : listaSucursales) {
             for (Vendedor v : s.getListaVendedores()) {
                 if (v.getDocumento().equals(vendedor.getDocumento())) {

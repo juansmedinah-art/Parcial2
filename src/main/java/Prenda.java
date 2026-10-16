@@ -62,8 +62,7 @@ public class Prenda {
                 ", nombre='" + nombre + '\'' +
                 ", marca='" + marca + '\'' +
                 ", precioUnitario=" + precioUnitario +
-                ", categoriaPrenda=" + categoriaPrenda +
-                '}';
+                ", categoriaPrenda=" + categoriaPrenda;
     }
 
     public double calcularPrecioConRecargo() {
