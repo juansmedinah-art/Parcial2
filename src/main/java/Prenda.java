@@ -57,7 +57,7 @@ public class Prenda {
     }
     @Override
     public String toString() {
-        return "Prenda{" +
+        return "Prenda: " +
                 "codigo=" + codigo +
                 ", nombre='" + nombre + '\'' +
                 ", marca='" + marca + '\'' +

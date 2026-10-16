@@ -11,6 +11,9 @@ public class DetalleVentas {
         this.inventario = inventario;
     }
 
+    public DetalleVentas(int cantVenta, Inventario itemInv, Cliente clienteVenta) {
+    }
+
     public double calcularPrecioFinal(Cliente cliente) {
         double precioConRecargo = inventario.getPrenda().calcularPrecioConRecargo();
         double descuentoCliente = cliente.getCategoriaCliente().getDescuento();

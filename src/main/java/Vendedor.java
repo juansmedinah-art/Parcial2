@@ -49,7 +49,7 @@ public class Vendedor extends Persona {
     }
     @Override
     public String toString() {
-        return "Vendedor{" +
+        return "Vendedor: " +
                 "codigoEmpleado=" + codigoEmpleado +
                 ", fechaContratacion=" + fechaContratacion +
                 ", salario=" + salario +

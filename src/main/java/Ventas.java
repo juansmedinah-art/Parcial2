@@ -9,7 +9,7 @@ public class Ventas {
     private Vendedor vendedor;
     private List<DetalleVentas> listaDetalleVentas;
 
-    public Ventas(int codigo, Date fechaCompra, Cliente cliente, Vendedor vendedor) {
+    public Ventas(int codigo, String fechaCompra, Cliente cliente, Vendedor vendedor) {
         this.codigo = codigo;
         this.fechaCompra = fechaCompra;
         this.cliente = cliente;
@@ -59,7 +59,7 @@ public class Ventas {
 
     @Override
     public String toString() {
-        return "Ventas{" +
+        return "Ventas: " +
                 "codigo=" + codigo +
                 ", fechaCompra=" + fechaCompra +
                 ", cliente=" + cliente +

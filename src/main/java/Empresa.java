@@ -70,7 +70,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa{" +
+        return "Empresa: " +
                 "nombre='" + nombre + '\'' +
                 ", nit=" + nit +
                 ", direccion='" + direccion + '\'' +
