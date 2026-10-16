@@ -102,6 +102,7 @@ public class Sucursal {
         return true;
     }
 
+
     public List<Inventario> consultarPrendasDisponibles() {
         List<Inventario> disponibles = new ArrayList<>();
         for (Inventario inv : listaInventario) {

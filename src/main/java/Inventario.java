@@ -80,6 +80,8 @@ public class Inventario {
                 ", historialVentasInventario=" + historialVentasInventario;
     }
 
+
+
     public void agregarDetalleHistorial(DetalleVentas detalle) {
         this.historialVentasInventario.add(detalle);
     }

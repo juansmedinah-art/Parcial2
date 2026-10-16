@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Vendedor extends Persona {
     private int codigoEmpleado;
-    private Date fechaContratacion;
+    private String fechaContratacion;
     private double salario;
     private List<Ventas> historialVentas;
 
-    public Vendedor(String documento, String nombreCompleto, String correo, int telefono, int codigoEmpleado, Date fechaContratacion, double salario) {
+    public Vendedor(int documento, String nombreCompleto, String correo, int telefono, int codigoEmpleado, String fechaContratacion, double salario) {
         super(documento, nombreCompleto, correo, telefono);
         this.codigoEmpleado = codigoEmpleado;
         this.fechaContratacion = fechaContratacion;
@@ -24,11 +24,11 @@ public class Vendedor extends Persona {
         this.codigoEmpleado = codigoEmpleado;
     }
 
-    public Date getFechaContratacion() {
+    public String getFechaContratacion() {
         return fechaContratacion;
     }
 
-    public void setFechaContratacion(Date fechaContratacion) {
+    public void setFechaContratacion(String fechaContratacion) {
         this.fechaContratacion = fechaContratacion;
     }
 

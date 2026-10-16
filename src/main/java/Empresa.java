@@ -89,6 +89,17 @@ public class Empresa {
         return true;
     }
 
+    public Prenda agregarPrenda(int codigo){
+        Prenda prendaElegida=null;
+        for(Prenda p: catalogoPrendas){
+            if(p.getCodigo()==codigo){
+                prendaElegida=p;
+                break;
+            }
+        }
+        return prendaElegida;
+    }
+
     public boolean registrarPrenda(Prenda prenda) {
         for (Prenda p : catalogoPrendas) {
             if (p.getCodigo() == prenda.getCodigo()) {
@@ -101,7 +112,7 @@ public class Empresa {
 
     public boolean registrarCliente(Cliente cliente) {
         for (Cliente c : listaClientes) {
-            if (c.getDocumento().equals(cliente.getDocumento())) {
+            if (c.getDocumento()==(cliente.getDocumento())) {
                 return false; // Documento duplicado
             }
         }
@@ -113,7 +124,7 @@ public class Empresa {
 
         for (Sucursal s : listaSucursales) {
             for (Vendedor v : s.getListaVendedores()) {
-                if (v.getDocumento().equals(vendedor.getDocumento())) {
+                if (v.getDocumento()==(vendedor.getDocumento())) {
                     return false; // Documento duplicado
                 }
             }
@@ -170,10 +181,10 @@ public class Empresa {
         return agotadas;
     }
 
-    public List<Ventas> consultarVentasPorVendedor(String documentoVendedor) {
+    public List<Ventas> consultarVentasPorVendedor(int documentoVendedor) {
         for (Sucursal sucursal : listaSucursales) {
             for (Vendedor v : sucursal.getListaVendedores()) {
-                if (v.getDocumento().equals(documentoVendedor)) {
+                if (v.getDocumento()==(documentoVendedor)) {
                     return v.getHistorialVentas();
                 }
             }
@@ -181,9 +192,9 @@ public class Empresa {
         return null;
     }
 
-    public List<Ventas> consultarComprasPorCliente(String documentoCliente) {
+    public List<Ventas> consultarComprasPorCliente(int documentoCliente) {
         for (Cliente c : listaClientes) {
-            if (c.getDocumento().equals(documentoCliente)) {
+            if (c.getDocumento()==(documentoCliente)) {
                 return c.getHistorialCompras();
             }
         }
