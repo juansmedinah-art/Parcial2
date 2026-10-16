@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Prenda {
     private int codigo;
     private String nombre;
@@ -55,6 +52,7 @@ public class Prenda {
     public void setCategoriaPrenda(CategoriaPrenda categoriaPrenda) {
         this.categoriaPrenda = categoriaPrenda;
     }
+
     @Override
     public String toString() {
         return "Prenda: " +
@@ -66,7 +64,7 @@ public class Prenda {
     }
 
     public double calcularPrecioConRecargo() {
-        double recargo = categoriaPrenda.getRecargo();
-        return precioUnitario + (precioUnitario * recargo);
+        double recargo = (categoriaPrenda != null) ? categoriaPrenda.getRecargo() : 0.0;
+        return this.precioUnitario + (this.precioUnitario * recargo);
     }
 }

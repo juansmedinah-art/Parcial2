@@ -2,26 +2,20 @@ public class DetalleVentas {
     private int cantidad;
     private double precioFinal;
     private double subtotal;
-    private Inventario inventario;
+    private Inventario itemInv;
 
-    public DetalleVentas(int cantidad, double precioFinal, double subtotal, Inventario inventario) {
+    public DetalleVentas(int cantidad, double precioFinal, double subtotal, Inventario itemInv) {
         this.cantidad = cantidad;
         this.precioFinal = precioFinal;
         this.subtotal = subtotal;
-        this.inventario = inventario;
+        this.itemInv = itemInv;
     }
 
     public DetalleVentas(int cantVenta, Inventario itemInv, Cliente clienteVenta) {
-    }
-
-    public double calcularPrecioFinal(Cliente cliente) {
-        double precioConRecargo = inventario.getPrenda().calcularPrecioConRecargo();
-        double descuentoCliente = cliente.getCategoriaCliente().getDescuento();
-        return precioConRecargo - (precioConRecargo * descuentoCliente);
-    }
-
-    public double calcularSubtotal() {
-        return this.precioFinal * this.cantidad;
+        this.cantidad = cantVenta;
+        this.itemInv = itemInv;
+        this.precioFinal = calcularPrecioFinal(clienteVenta);
+        this.subtotal = calcularSubtotal();
     }
 
     public int getCantidad() {
@@ -49,11 +43,11 @@ public class DetalleVentas {
     }
 
     public Inventario getInventario() {
-        return inventario;
+        return itemInv;
     }
 
     public void setInventario(Inventario inventario) {
-        this.inventario = inventario;
+        this.itemInv = inventario;
     }
 
     @Override
@@ -62,6 +56,16 @@ public class DetalleVentas {
                 "cantidad=" + cantidad +
                 ", precioFinal=" + precioFinal +
                 ", subtotal=" + subtotal +
-                ", inventario=" + inventario;
+                ", inventario=" + itemInv;
+    }
+
+    public double calcularPrecioFinal(Cliente cliente) {
+        double precioConRecargo = itemInv.getPrenda().calcularPrecioConRecargo();
+        double descuentoCliente = cliente.getCategoriaCliente().getDescuento();
+        return precioConRecargo - (precioConRecargo * descuentoCliente);
+    }
+
+    public double calcularSubtotal() {
+        return this.precioFinal * this.cantidad;
     }
 }

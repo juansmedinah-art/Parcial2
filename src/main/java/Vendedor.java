@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Vendedor extends Persona {
@@ -47,17 +46,18 @@ public class Vendedor extends Persona {
     public void setHistorialVentas(List<Ventas> historialVentas) {
         this.historialVentas = historialVentas;
     }
+
     @Override
     public String toString() {
         return "Vendedor: " +
                 "codigoEmpleado=" + codigoEmpleado +
-                ", fechaContratacion=" + fechaContratacion +
+                ", fechaContratacion='" + fechaContratacion + '\'' +
                 ", salario=" + salario +
-                ", historialVentas=" + historialVentas;
+                ", historialVentas=" + historialVentas +
+                "} " + super.toString();
     }
+
     public void agregarVenta(Ventas venta) {
         this.historialVentas.add(venta);
     }
-
-
 }

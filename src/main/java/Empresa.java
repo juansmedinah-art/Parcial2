@@ -89,11 +89,11 @@ public class Empresa {
         return true;
     }
 
-    public Prenda agregarPrenda(int codigo){
-        Prenda prendaElegida=null;
-        for(Prenda p: catalogoPrendas){
-            if(p.getCodigo()==codigo){
-                prendaElegida=p;
+    public Prenda agregarPrenda(int codigo) {
+        Prenda prendaElegida = null;
+        for (Prenda p : catalogoPrendas) {
+            if (p.getCodigo() == codigo) {
+                prendaElegida = p;
                 break;
             }
         }
@@ -103,7 +103,7 @@ public class Empresa {
     public boolean registrarPrenda(Prenda prenda) {
         for (Prenda p : catalogoPrendas) {
             if (p.getCodigo() == prenda.getCodigo()) {
-                return false; // Código duplicado
+                return false;
             }
         }
         catalogoPrendas.add(prenda);
@@ -112,8 +112,8 @@ public class Empresa {
 
     public boolean registrarCliente(Cliente cliente) {
         for (Cliente c : listaClientes) {
-            if (c.getDocumento()==(cliente.getDocumento())) {
-                return false; // Documento duplicado
+            if (c.getDocumento() == cliente.getDocumento()) {
+                return false;
             }
         }
         listaClientes.add(cliente);
@@ -121,11 +121,10 @@ public class Empresa {
     }
 
     public boolean registrarVendedor(int codigoSucursal, Vendedor vendedor) {
-
         for (Sucursal s : listaSucursales) {
             for (Vendedor v : s.getListaVendedores()) {
-                if (v.getDocumento()==(vendedor.getDocumento())) {
-                    return false; // Documento duplicado
+                if (v.getDocumento() == vendedor.getDocumento()) {
+                    return false;
                 }
             }
         }
@@ -184,7 +183,7 @@ public class Empresa {
     public List<Ventas> consultarVentasPorVendedor(int documentoVendedor) {
         for (Sucursal sucursal : listaSucursales) {
             for (Vendedor v : sucursal.getListaVendedores()) {
-                if (v.getDocumento()==(documentoVendedor)) {
+                if (v.getDocumento() == documentoVendedor) {
                     return v.getHistorialVentas();
                 }
             }
@@ -194,7 +193,7 @@ public class Empresa {
 
     public List<Ventas> consultarComprasPorCliente(int documentoCliente) {
         for (Cliente c : listaClientes) {
-            if (c.getDocumento()==(documentoCliente)) {
+            if (c.getDocumento() == documentoCliente) {
                 return c.getHistorialCompras();
             }
         }

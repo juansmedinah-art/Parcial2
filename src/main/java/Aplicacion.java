@@ -98,7 +98,7 @@ public class Aplicacion {
                     Prenda prenda = new Prenda(codigoP, nombreP, marca, precioUnitario, categoriaP);
                     if (empresa.registrarPrenda(prenda)) {
                         System.out.println("la prenda ha sido registrada correctamente");
-                    }else{
+                    } else {
                         System.out.println("el codigo o la prenda ya existe");
                     }
                     break;
@@ -109,6 +109,9 @@ public class Aplicacion {
                     System.out.println("1.Cliente");
                     System.out.println("2.Empleado");
 
+                    int tipo = sc.nextInt();
+                    sc.nextLine();
+
                     System.out.println("ingrese el documento de la persona: ");
                     int documentoP = sc.nextInt();
                     sc.nextLine();
@@ -118,9 +121,6 @@ public class Aplicacion {
                     String correo = sc.nextLine();
                     System.out.println("ingrese el numero de telefono: ");
                     int telefono = sc.nextInt();
-                    sc.nextLine();
-
-                    int tipo = sc.nextInt();
                     sc.nextLine();
 
                     switch (tipo) {
@@ -179,6 +179,8 @@ public class Aplicacion {
                                 System.out.println("vendedor ya existente");
                             }
                             break;
+                        default:
+                            System.out.println("tipo de persona no valido");
                     }
                     break;
 
@@ -362,10 +364,10 @@ public class Aplicacion {
                         System.out.println("Inventario de la sucursal " + sucConsulta.getNombre() + ":");
                         for (Inventario inv : sucConsulta.consultarPrendasDisponibles()) {
                             System.out.println("Codigo: " + inv.getCodigo() +
-                                    "Prenda: " + inv.getPrenda().getNombre() +
-                                    "Talla: " + inv.getTalla() +
-                                    "Color: " + inv.getColor() +
-                                    "Cantidad disponible: " + inv.getCantidadD());
+                                    " | Prenda: " + inv.getPrenda().getNombre() +
+                                    " | Talla: " + inv.getTalla() +
+                                    " | Color: " + inv.getColor() +
+                                    " | Cantidad disponible: " + inv.getCantidadD());
                         }
                     }
                     break;
@@ -395,6 +397,7 @@ public class Aplicacion {
 
                 case 9:
                     System.out.println("----consultar ventas de empleados----");
+                    System.out.println("ingrese el documento del vendedor: ");
                     int documentoEmpleado = sc.nextInt();
                     sc.nextLine();
 
@@ -407,7 +410,7 @@ public class Aplicacion {
                     break;
 
                 case 10:
-                    System.out.println("----consultar ingresos de cada sucursal----");
+                    System.out.println("----consultar ingresos de cada Sucursal----");
 
                     System.out.println("ingrese el codigo de la sucursal que desea averiguar: ");
                     int codigoSucursal = sc.nextInt();
@@ -432,7 +435,7 @@ public class Aplicacion {
                 default:
                     System.out.println("opcion no valida");
             }
-        }while (n!=0);
+        } while (n != 0);
 
     }
 }

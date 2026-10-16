@@ -95,13 +95,12 @@ public class Sucursal {
             if (inv.getPrenda().getCodigo() == inventario.getPrenda().getCodigo() &&
                     inv.getTalla().equalsIgnoreCase(inventario.getTalla()) &&
                     inv.getColor().equalsIgnoreCase(inventario.getColor())) {
-                return false; // Ya existe esta combinación en la sucursal
+                return false;
             }
         }
         listaInventario.add(inventario);
         return true;
     }
-
 
     public List<Inventario> consultarPrendasDisponibles() {
         List<Inventario> disponibles = new ArrayList<>();

@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Inventario {
     private int codigo;
     private String talla;
@@ -79,8 +76,6 @@ public class Inventario {
                 ", prenda=" + prenda +
                 ", historialVentasInventario=" + historialVentasInventario;
     }
-
-
 
     public void agregarDetalleHistorial(DetalleVentas detalle) {
         this.historialVentasInventario.add(detalle);

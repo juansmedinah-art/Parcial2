@@ -43,8 +43,9 @@ public class Cliente extends Persona {
                 "codigoAfiliacion=" + codigoAfiliacion +
                 ", categoriaCliente=" + categoriaCliente +
                 ", historialCompras=" + historialCompras +
-                '}';
+                "} " + super.toString();
     }
+
     public void agregarCompra(Ventas venta) {
         this.historialCompras.add(venta);
     }

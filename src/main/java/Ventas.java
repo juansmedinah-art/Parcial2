@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Ventas {
     private int codigo;
-    private Date fechaCompra;
+    private String fechaCompra;
     private Cliente cliente;
     private Vendedor vendedor;
     private List<DetalleVentas> listaDetalleVentas;
@@ -25,11 +24,11 @@ public class Ventas {
         this.codigo = codigo;
     }
 
-    public Date getFechaCompra() {
+    public String getFechaCompra() {
         return fechaCompra;
     }
 
-    public void setFechaCompra(Date fechaCompra) {
+    public void setFechaCompra(String fechaCompra) {
         this.fechaCompra = fechaCompra;
     }
 
@@ -61,7 +60,7 @@ public class Ventas {
     public String toString() {
         return "Ventas: " +
                 "codigo=" + codigo +
-                ", fechaCompra=" + fechaCompra +
+                ", fechaCompra='" + fechaCompra + '\'' +
                 ", cliente=" + cliente +
                 ", vendedor=" + vendedor +
                 ", listaDetalleVentas=" + listaDetalleVentas;
